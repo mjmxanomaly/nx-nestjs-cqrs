@@ -1,5 +1,4 @@
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
-import { ApiBody } from '@nestjs/swagger';
 import { KillDragonDto } from 'nestjs-playground/heroes/domain';
 
 import { HeroesFacade } from '../service/heroes.facade';
@@ -10,7 +9,6 @@ export class HeroesController {
 
   constructor(private readonly heroes: HeroesFacade) {}
 
-  @ApiBody({ type: KillDragonDto })
   @Post(':id/kill')
   async killDragon(
     @Param('id') id: string,
