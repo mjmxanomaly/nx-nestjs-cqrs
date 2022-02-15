@@ -1,6 +1,9 @@
 {
   "version": 2,
   "projects": {
-    "demo": "apps/demo"
+    "demo": "apps/demo",
+    "heroes-application": "libs/heroes/application",
+    "heroes-domain": "libs/heroes/domain",
+    "heroes-infrastructure": "libs/heroes/infrastructure"
   }
 }

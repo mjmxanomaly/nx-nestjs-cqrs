@@ -1,0 +1,29 @@
+{
+  "root": "libs/heroes/infrastructure",
+  "sourceRoot": "libs/heroes/infrastructure/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/heroes/infrastructure/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/heroes/infrastructure"
+      ],
+      "options": {
+        "jestConfig": "libs/heroes/infrastructure/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
