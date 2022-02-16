@@ -1,0 +1,6 @@
+{
+  "watch": ["apps", "libs"],
+  "ext": "ts",
+  "ignore": ["apps/**/*.spec.ts", "libs/**/*.spec.ts"],
+  "exec": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register apps/demo/src/main.ts "
+}
