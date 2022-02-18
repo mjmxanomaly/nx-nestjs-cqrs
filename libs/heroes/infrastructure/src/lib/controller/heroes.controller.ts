@@ -1,5 +1,6 @@
+import { MapPipe } from '@automapper/nestjs';
 import { Body, Controller, Get, Logger, Param, Post } from '@nestjs/common';
-import { KillDragonDto } from 'nestjs-playground/heroes/domain';
+import { KillDragon, KillDragonDto } from 'nestjs-playground/heroes/domain';
 
 import { HeroesFacade } from '../service/heroes.facade';
 
@@ -12,9 +13,9 @@ export class HeroesController {
   @Post(':id/kill')
   async killDragon(
     @Param('id') id: string,
-    @Body() { dragonId }: KillDragonDto
+    @Body(MapPipe(KillDragonDto, KillDragon)) dto: KillDragonDto
   ) {
-    return this.heroes.commandKillDragon(id, dragonId);
+    return this.heroes.commandKillDragon(id, dto.dragonId);
   }
 
   @Get()

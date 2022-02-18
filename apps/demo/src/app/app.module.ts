@@ -3,14 +3,14 @@ import { AutomapperModule } from '@automapper/nestjs';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { pojos } from '@automapper/pojos';
+import { classes } from '@automapper/classes';
 import { CamelCaseNamingConvention } from '@automapper/core';
 import { HeroesInfrastructureModule } from 'nestjs-playground/heroes/infrastructure';
 
 @Module({
   imports: [
     AutomapperModule.forRoot({
-      options: [{ name: 'demo', pluginInitializer: pojos }],
+      options: [{ name: 'demo', pluginInitializer: classes }],
       globalNamingConventions: {
         source: new CamelCaseNamingConvention(),
         destination: new CamelCaseNamingConvention(),
